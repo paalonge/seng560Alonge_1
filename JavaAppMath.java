@@ -42,26 +42,6 @@ private final int UNKNOWN_TYPE=-11;
 private final int BASE_TYPES_CONVERSION_ERROR=-12;
 
   
- 
-  /*  public JavaAppMath() {
-       try { 
-       this.no1=(float)0;
-       this.no2=(float)0;
-       this.error_code=MISSING_ARGUMENT_ERROR;
-       this.error_message="No values entered yet.\n";
-       this.float_result=0;
-       this.base="";
-       this.baseOut="";
-       this.oper="";
-       } 
-       catch (Exception e)
-       { this.error_code=UNKNOWN_ERROR;
-         this.error_message="Unknown Error on setRequest\n";
-         this.float_result=0;
-         System.exit(1);
-       }
-    }
-*/
    //for sq root no2 number is not used
     void setRequest(String opIn, int no1In, int no2In) {
        try { 
@@ -69,7 +49,7 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="Operation"  + opIn + " must be ADD, SUB, MUL, DIV, SQR, EXP, or CON.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
        this.base="INT";
@@ -93,7 +73,7 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="Operation"  + opIn + " must be ADD, SUB, MUL, DIV, SQR, EXP, or CON.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
        this.base="FLO";
@@ -118,7 +98,7 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="This operation of two arugments accepts only SQR.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
        this.base="INT";
@@ -142,7 +122,7 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="This operation of two arugments accepts only SQR.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
        this.base="";
@@ -168,14 +148,14 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="This operation of three arugments accepts only CON.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
         if (!ty_choices.contains(baseIn.toUpperCase())) { 
            this.float_result=0;
            this.error_code=UNKNOWN_TYPE;
            this.error_message="Number type"  + baseIn + " must be INT, FLO, OCT, BIN, HEX or STR.";
-           System.exit(1);
+           return;
         } else this.base=baseIn.toUpperCase();
                 
        this.no1=0;
@@ -197,14 +177,14 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="This operation of three arugments accepts only CON.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
         if (!ty_choices.contains(baseIn.toUpperCase())) { 
            this.float_result=0;
            this.error_code=UNKNOWN_TYPE;
            this.error_message="Number type"  + baseIn + " must be INT, FLO, OCT, BIN, HEX or STR.";
-           System.exit(1);
+           return;
         } else this.base=baseIn.toUpperCase();
                 
        this.no1=0;
@@ -227,14 +207,14 @@ private final int BASE_TYPES_CONVERSION_ERROR=-12;
            this.float_result=0;
            this.error_code=UNKNOWN_OPERATION;
            this.error_message="This operation of three arugments accepts only CON.";
-           System.exit(1);
+           return;
         } else this.oper=opIn.toUpperCase();
       
         if (!ty_choices.contains(baseIn.toUpperCase())) { 
            this.float_result=0;
            this.error_code=UNKNOWN_TYPE;
            this.error_message="Number type"  + baseIn + " must be INT, FLO, OCT, BIN, HEX or STR.";
-           System.exit(1);
+           return;
         } else this.base=baseIn.toUpperCase();
                 
        this.no1=0;
